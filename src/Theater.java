@@ -12,18 +12,18 @@ public class Theater {
         Choreographer choreographer = new Choreographer("Анна", "Павлова", Gender.FEMALE);
 
         Show regularShow = new Show("Гроза", 120, director1);
-        Opera opera = new Opera("Евгений Онегин", 180, director2, composer,
-                "Молодой дворянин Онегин, устав от светской жизни...", 30);
-        Ballet ballet = new Ballet("Лебединое озеро", 150, director1, composer,
-                "Принц Зигфрид встречает заколдованную принцессу Одетту...", choreographer);
+        Opera opera = new Opera("Евгений Онегин", 180, director2, composer, 
+                               "Молодой дворянин Онегин, устав от светской жизни...", 30);
+        Ballet ballet = new Ballet("Лебединое озеро", 150, director1, composer, 
+                                  "Принц Зигфрид встречает заколдованную принцессу Одетту...", choreographer);
 
         regularShow.addActor(actor1);
         regularShow.addActor(actor2);
-
+        
         opera.addActor(actor2);
         opera.addActor(actor3);
         opera.addActor(actor4);
-
+        
         ballet.addActor(actor1);
         ballet.addActor(actor4);
 
@@ -34,6 +34,11 @@ public class Theater {
         regularShow.printActors();
         opera.printActors();
         ballet.printActors();
+
+        System.out.println("\n=== Информация о режиссерах ===");
+        regularShow.printDirector();
+        opera.printDirector();
+        ballet.printDirector();
 
         System.out.println("\n=== Замена актера ===");
         opera.replaceActor(actor1, "Иванов");
@@ -46,10 +51,5 @@ public class Theater {
         opera.printLibretto();
         System.out.println();
         ballet.printLibretto();
-
-        System.out.println("\n=== Информация о режиссерах ===");
-        System.out.println("Режиссер оперы: " + opera.getDirector());
-        System.out.println("Режиссер балета: " + ballet.getDirector());
-        System.out.println("Режиссер обычного спектакля: " + regularShow.getDirector());
     }
 }

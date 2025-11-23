@@ -30,6 +30,12 @@ class Show {
         return actors;
     }
 
+    // Новый метод для печати имени и фамилии режиссера
+    public void printDirector() {
+        System.out.println("Режиссер спектакля '" + title + "': " + 
+                          director.getFirstName() + " " + director.getLastName());
+    }
+
     public void addActor(Actor actor) {
         if (actors.contains(actor)) {
             System.out.println("Предупреждение: актер " + actor + " уже участвует в спектакле!");
